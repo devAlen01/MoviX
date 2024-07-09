@@ -1,0 +1,42 @@
+#Hero {
+  margin: 0 10px;
+  .content {
+    .random {
+      .info {
+        padding: 10px 30px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+        .wellcome {
+          font-size: clamp(20px, 8vw, 60px);
+          letter-spacing: 1px;
+        }
+        .text {
+          margin-top: 20px;
+          font-size: clamp(11px, 3vw, 16px);
+          line-height: clamp(13px, 3vw, 22px);
+          max-width: clamp(300px, 40vw, 700px);
+          color: rgb(214, 208, 208);
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  #Hero {
+    .content {
+      .random {
+        .info {
+          display: none;
+        }
+      }
+    }
+  }
+}

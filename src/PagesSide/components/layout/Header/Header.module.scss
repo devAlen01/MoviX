@@ -1,0 +1,42 @@
+.Header {
+  padding: 30px 0;
+  position: relative;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: clamp(10px, 2vw, 22px);
+      span {
+        color: aqua;
+      }
+    }
+    .burger_btn {
+      background: transparent;
+      color: aqua;
+      font-size: 27px;
+    }
+    .navigate {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 400px;
+    }
+    .user {
+      font-size: 22px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}

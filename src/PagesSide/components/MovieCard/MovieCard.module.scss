@@ -1,0 +1,36 @@
+.MovieCard {
+  border-radius: 8px;
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  .image {
+    img {
+      width: 100%;
+      max-width: clamp(90px, 50vw, 300px);
+      border-radius: 8px;
+    }
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+    font-weight: 400;
+    font-size: clamp(10px, 3vw, 18px);
+    h4 {
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: clamp(60px, 40vw, 200px);
+    }
+    h5 {
+      font-weight: 400;
+    }
+  }
+}

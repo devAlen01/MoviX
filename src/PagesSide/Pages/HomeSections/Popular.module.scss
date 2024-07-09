@@ -1,0 +1,11 @@
+#Popular {
+  margin-top: 40px;
+  .content {
+    margin: 0 10px;
+    h3 {
+      margin: 20px 10px;
+      font-size: clamp(14px, 3vw, 22px);
+      font-weight: 600;
+    }
+  }
+}
