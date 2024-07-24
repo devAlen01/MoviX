@@ -1,5 +1,4 @@
 import React from "react";
-
 import scss from "./LayoutSide.module.scss";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";

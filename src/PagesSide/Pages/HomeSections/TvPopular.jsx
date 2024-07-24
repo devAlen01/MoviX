@@ -26,6 +26,8 @@ const settings = {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 2,
+
         autoplay: false,
       },
     },
@@ -33,6 +35,8 @@ const settings = {
       breakpoint: 480,
       settings: {
         slidesToShow: 2.1,
+        slidesToScroll: 2,
+
         arrows: false,
         autoplay: false,
       },
