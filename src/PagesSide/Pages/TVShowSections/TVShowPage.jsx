@@ -1,7 +1,12 @@
 import React from "react";
+import TVList from "./TVlist";
 
 const TVShowPage = () => {
-  return <div>asas</div>;
+  return (
+    <>
+      <TVList />
+    </>
+  );
 };
 
 export default TVShowPage;
