@@ -6,13 +6,13 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: clamp(140px, 18vw, 310px);
+  max-width: clamp(150px, 30vw, 310px);
 
   cursor: pointer;
   .image {
     img {
       width: 100%;
-      max-width: clamp(90px, 30vw, 300px);
+      max-width: clamp(120px, 60vw, 300px);
       border-radius: 8px;
     }
   }
