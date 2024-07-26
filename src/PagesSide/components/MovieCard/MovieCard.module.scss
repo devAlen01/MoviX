@@ -7,7 +7,6 @@
   justify-content: space-between;
   align-items: center;
   max-width: clamp(150px, 30vw, 310px);
-
   cursor: pointer;
   .image {
     img {
@@ -26,14 +25,13 @@
     font-size: clamp(9px, 3vw, 14px);
     h4 {
       max-width: clamp(60px, 40vw, 200px);
-      line-height: clamp(10px, 2vw, 18px);
+      line-height: clamp(14px, 2vw, 18px);
       color: #fff;
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin: 2px 0;
     }
     h5 {
       font-weight: 400;
