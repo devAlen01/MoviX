@@ -1,0 +1,44 @@
+.Footer {
+  .line {
+    border: 2px solid gray;
+  }
+  .content {
+    padding: 20px 0;
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(18px, 2vw, 24px);
+        padding: 20px;
+        span {
+          color: aqua;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: clamp(10px, 3vw, 20px);
+      }
+      .icons {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        span {
+          font-size: clamp(25px, 5vw, 35px);
+          cursor: pointer;
+          &:hover {
+            color: aqua;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

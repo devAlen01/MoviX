@@ -1,5 +1,11 @@
+import MovieList from "./MovieList";
+
 const MoviePage = () => {
-  return <div>mm</div>;
+  return (
+    <>
+      <MovieList />
+    </>
+  );
 };
 
 export default MoviePage;

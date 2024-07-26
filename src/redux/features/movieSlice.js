@@ -9,12 +9,14 @@ const initialState = {
   topRatedMovies: [],
   tvPopular: [],
   allTrending: [],
+  movieList: [],
+  activePage: 1,
   isLoading: false,
   error: "",
 };
 
 export const getMovieList = createAsyncThunk(
-  "movies/getMovies",
+  "movies/getMovieList",
   async (type, { rejectWithValue }) => {
     try {
       const { data } = await axios(`${api}${type}`, {
@@ -24,7 +26,25 @@ export const getMovieList = createAsyncThunk(
           page: 1,
         },
       });
-      return { type, result: data.results };
+      return { type, result: data };
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const getList = createAsyncThunk(
+  "movies/getList",
+  async ({ type, page }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios(`${api}${type}`, {
+        params: {
+          language: "ru-RU",
+          api_key: key,
+          page: page,
+        },
+      });
+      return { type, result: data };
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -34,6 +54,11 @@ export const getMovieList = createAsyncThunk(
 export const movieSlice = createSlice({
   name: "movie",
   initialState,
+  reducers: {
+    pageChange(state, action) {
+      state.activePage = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMovieList.pending, (state) => {
@@ -41,20 +66,27 @@ export const movieSlice = createSlice({
       })
       .addCase(getMovieList.fulfilled, (state, action) => {
         state.isLoading = false;
-        if (action.payload.type === "movie/popular") {
-          state.popularMovies = action.payload.result;
-        } else if (action.payload.type === "movie/top_rated") {
-          state.topRatedMovies = action.payload.result;
-        } else if (action.payload.type === "tv/popular") {
-          state.tvPopular = action.payload.result;
-        } else if (action.payload.type === "trending/all/day") {
-          state.allTrending = action.payload.result;
+        const { type, result } = action.payload;
+        if (type === "movie/popular") {
+          state.popularMovies = result.results;
+        } else if (type === "movie/top_rated") {
+          state.topRatedMovies = result.results;
+        } else if (type === "tv/popular") {
+          state.tvPopular = result.results;
+        } else if (type === "trending/all/day") {
+          state.allTrending = result.results;
         }
       })
-      .addCase(getMovieList.rejected, (state, action) => {
+
+      .addCase(getList.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = action.error;
+        state.movieList = action.payload.result;
       });
   },
 });
+
+export const { pageChange } = movieSlice.actions;
 export default movieSlice.reducer;
